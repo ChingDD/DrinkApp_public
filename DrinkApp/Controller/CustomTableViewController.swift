@@ -128,6 +128,7 @@ class CustomTableViewController: UITableViewController {
         }
         
     }
+    
     //MARK: - Target Action
     @IBAction func chooseSize(_ sender: UIButton) {
         for button in sizeButton{
@@ -225,6 +226,8 @@ class CustomTableViewController: UITableViewController {
             toppingPrice = 0
             sender.isSelected = false
             customDrink.topping = nil
+            selectedToppingBtn = nil
+            
         }else{
             for btn in toppingButton{
                 btn.configuration?.baseBackgroundColor = .white
