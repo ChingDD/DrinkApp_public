@@ -219,6 +219,7 @@ extension OrderViewController:UIScrollViewDelegate{
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        //自動捲
         let contentOffset = orderCollectionView.contentOffset
         print("contentOffset:\(contentOffset)")
         var sectionHeights:[CGFloat]=[]

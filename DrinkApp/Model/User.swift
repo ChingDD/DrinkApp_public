@@ -21,6 +21,7 @@ struct UserResponse:Codable{
     let userToken:String
     let login: String
     
+
     enum CodingKeys:String,CodingKey{
         case userToken = "User-Token"   //他會使let userToken在coding時變成let User-Token，如此就會符合抓API的條件
         case login

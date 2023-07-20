@@ -42,55 +42,75 @@ class RegistViewController: UIViewController {
         
     //MARK: 自定義function
     //註冊
+    // 定義一個名為 registUser 的函式
     func registUser(){
+        // 設定 API 的 URL 字串
         let urlString = "https://favqs.com/api/users"
+        // 建立 URL 物件
         let url = URL(string: urlString)!
+        // 建立 URLRequest 物件，並設定 URL
         var urlRequest = URLRequest(url: url)
+        // 設定 HTTP 方法為 POST
         urlRequest.httpMethod = "POST"
+        // 設定 HTTP 標頭中的 Content-Type 為 application/json
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        // 設定 HTTP 標頭中的 Authorization，用於驗證身分
         urlRequest.addValue("Token token=4fdcff2ff98e1d8082b1928df1fc9fc3", forHTTPHeaderField: "Authorization")
         
+        // 建立 User 物件，並傳入使用者資訊
         let body = User(user: UserInfo(login: accountTextField.text!, email: emailTextField.text!, password: passwordTextField.text!))
+        // 將 User 物件編碼成 JSON 格式的資料
         let postBody = try! JSONEncoder().encode(body)
+        // 設定 HTTP 請求的主體
         urlRequest.httpBody = postBody
-        URLSession.shared.dataTask(with: urlRequest) {
-            data, response, error
-            in
-            if let data{
-                do{
+        
+        // 使用 URLSession 執行異步的資料任務
+        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            if let data {
+                // 如果有資料回傳，進行資料解析
+                do {
+                    // 將回傳的資料解碼成 UserResponse 物件
                     let content = try JSONDecoder().decode(UserResponse.self, from: data)
+                    // 將解析後的使用者令牌儲存到 UserDefaults
                     UserDefaults.standard.set(content.userToken, forKey: "token")
+                    // 印出解析後的內容
                     print(content)
+                    // 印出註冊成功的訊息
                     print("註冊成功")
                     
                     DispatchQueue.main.async {
-                        if let tabBarController = self.storyboard?.instantiateViewController(identifier: "tabBarController"){
-                            //因為tabBar前面沒有導航controller，所以這個方法會使後面的畫面變成卡片式，因此不用
-                            //self.present(tabBarController, animated: true)
+                        if let tabBarController = self.storyboard?.instantiateViewController(identifier: "tabBarController") {
+                            // 將 tabBarController 設定為根視圖控制器
                             self.view.window?.rootViewController = tabBarController
                         }
                     }
                     
-                }catch{
-                    //這是註冊失敗時回傳的error
-                    print(error)
-                    do{
+                } catch {
+                    // 若解析失敗，印出錯誤訊息
+                    print("註冊失敗：\(error)")
+                    do {
+                        // 建立 JSONDecoder 物件，並設定鍵解碼策略
                         let decoder = JSONDecoder()
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        // 將回傳的資料解碼成 UserError 物件
                         let registError = try decoder.decode(UserError.self, from: data)
+                        // 建立警示視窗，顯示錯誤訊息
                         let alert = UIAlertController(title: "輸入有誤", message: registError.message, preferredStyle: .alert)
                         let alertAction = UIAlertAction(title: "確定", style: .default)
                         alert.addAction(alertAction)
                         DispatchQueue.main.async {
+                            // 在主執行緒中顯示警示視窗
                             self.present(alert, animated: true)
                         }
-                    }catch{
+                    } catch {
+                        // 若解析失敗，印出錯誤訊息
                         print("錯誤解析失敗")
                     }
                 }
             }
-        }.resume()
+        }.resume() // 開始執行資料任務
     }
+
     
     //鍵盤彈起來
     @objc func keyboardWillShow(_ notification:Notification){

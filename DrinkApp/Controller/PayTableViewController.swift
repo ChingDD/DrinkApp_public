@@ -44,6 +44,7 @@ class PayTableViewController: UITableViewController {
         //當用戶直接在payPage更改數量，但未送出訂單，要跳出去繼續選購時，要儲存他們剛剛做的修改紀錄到userDefault裡
         let savedDrinksData = try! JSONEncoder().encode(savedCustomDrinks)
         UserDefaults.standard.set(savedDrinksData, forKey: "savedDrinks")
+        
         //因為表格刪除後，要把數量回傳到上一頁，所以跑performSegue
         //準備跑performSegue
         print("payPage：開始跑viewWillDisappear的performSegue")
