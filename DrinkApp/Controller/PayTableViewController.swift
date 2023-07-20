@@ -105,7 +105,7 @@ class PayTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
                 }
-                //print("上傳成功後回傳的response：\(response)")
+                print("上傳成功後回傳的response：\(response)")
             case .failure(let error):
                 print("上傳失敗回傳的response:\(error)")
             }

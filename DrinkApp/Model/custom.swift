@@ -31,7 +31,7 @@ struct CustomDrink:Codable{
     var price:Int
 }
 
-//Upload/Pathch資料時decode JSON的結構
+//POST/Patch資料時decode JSON的結構
 struct Order:Codable{
     let records:[Field]
 }
