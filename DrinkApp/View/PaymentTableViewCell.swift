@@ -14,7 +14,8 @@ class PaymentTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var orderNumber: UILabel!
     @IBOutlet weak var orderNumberStepper: UIStepper!
-    
+    @IBOutlet weak var drinkAmountsStepper: UIStepper!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

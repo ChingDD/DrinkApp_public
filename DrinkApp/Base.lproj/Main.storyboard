@@ -676,7 +676,7 @@
                                             <rect key="frame" x="10" y="127" width="94" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
-                                                <action selector="changeOrderNumber:" destination="oo2-pg-Pdf" eventType="valueChanged" id="Pdo-O2-BhV"/>
+                                                <action selector="changeOrderNumber:" destination="oo2-pg-Pdf" eventType="valueChanged" id="5Wz-Qg-RPF"/>
                                             </connections>
                                         </stepper>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1杯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkA-ow-r8K">
@@ -690,6 +690,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="customLabel" destination="Yvo-fK-4yp" id="TP5-bC-sZe"/>
+                                    <outlet property="drinkAmountsStepper" destination="MmB-GU-HFS" id="9Hi-4b-eja"/>
                                     <outlet property="drinkName" destination="Qfj-es-NcI" id="Jj1-pe-Fo6"/>
                                     <outlet property="favoriteFlavorLabel" destination="HS8-OS-HeD" id="nRu-Zz-D25"/>
                                     <outlet property="orderNumber" destination="RkA-ow-r8K" id="Rre-QG-rNm"/>

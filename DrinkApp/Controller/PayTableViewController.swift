@@ -13,6 +13,8 @@ class PayTableViewController: UITableViewController {
     var savedOrdersNumber = "0"
     @IBOutlet weak var totalPriceLabel: UILabel!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //讀出userDefault裡的訂單
@@ -68,7 +70,7 @@ class PayTableViewController: UITableViewController {
             //fields要改var才能用
             savedCustomDrinks[indexPath.row].fields.number = Int(sender.value)
 
-            cell.priceLabel.text = "$\(savedCustomDrinks[indexPath.row].fields.price)"
+            //cell.priceLabel.text = "$\(savedCustomDrinks[indexPath.row].fields.price)"
             var totalPrice = 0
             for field in savedCustomDrinks{
                 totalPrice = totalPrice + field.fields.price * field.fields.number
@@ -148,6 +150,7 @@ class PayTableViewController: UITableViewController {
         cell.priceLabel.text = "$\(order.price)"
         //飲料數量
         cell.orderNumber.text = "\(order.number)杯"
+        cell.drinkAmountsStepper.value = Double(order.number)
         //特殊飲料的喜好選項
         if let upgradeMilkTea = order.upgradeMilkTea, let AddFreeBlackTeaJelly = order.isAddFreeBlackTeaJelly{
             cell.favoriteFlavorLabel.text = String("喜好選項: "+upgradeMilkTea+AddFreeBlackTeaJelly)
