@@ -28,9 +28,9 @@ class DrinkViewController: UIViewController {
 
 //MARK: - 自定義function
     func fetchDrink(){
-        if let url = URL(string: "https://api.airtable.com/v0/applXRGr3hb8H3SoE/DrinkApp"){
+        if let url = URL(string: "https://api.airtable.com/v0/appc4Z86Ox610x8pz/DrinkApp"){
             var urlRequest = URLRequest(url: url)
-            urlRequest.setValue("Bearer key1rgSyzPr4pBAmu", forHTTPHeaderField: "Authorization")
+            urlRequest.setValue("Bearer patgELzloM2EgjvRW.fc11fc85870cf11e64862976e4e20a072306c5c12aff075884bed897bc76817c", forHTTPHeaderField: "Authorization")
             URLSession.shared.dataTask(with: urlRequest) {
                 data, response, error
                 in

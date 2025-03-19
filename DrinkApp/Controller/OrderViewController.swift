@@ -23,7 +23,7 @@ class OrderViewController: UIViewController {
         //設定collectionView格式
         configLayout()
         //抓取資料
-        DrinkController.shared.fetchDrinks(collectionView: orderCollectionView, from: "https://api.airtable.com/v0/applXRGr3hb8H3SoE/DrinkApp") {
+        DrinkController.shared.fetchDrinks(collectionView: orderCollectionView, from: "https://api.airtable.com/v0/appc4Z86Ox610x8pz/DrinkApp") {
             result
             in
             switch result{

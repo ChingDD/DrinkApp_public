@@ -9,7 +9,7 @@ import Foundation
 
 class UpdateController{
     static let shared = UpdateController()
-    
+    //在pay頁面更改數量後，將變動的飲品傳到後台(no use)
     func updateOrder(url:String, fields:[Field] ,completion: @escaping(Result<Response,Error>)->Void){
         guard let url = URL(string: url)else{return}
         var urlRequest = URLRequest(url: url)

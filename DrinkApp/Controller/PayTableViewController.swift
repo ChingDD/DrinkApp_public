@@ -82,7 +82,7 @@ class PayTableViewController: UITableViewController {
     @IBAction func sendOrders(_ sender: UIButton) {
         
         //上傳Order
-        let urlString = "https://api.airtable.com/v0/appVOZsx1GGAd652H/orderDrink"
+        let urlString = "https://api.airtable.com/v0/appoygpvH8Xg8qMnE/orderDrink"
         let order = Order(records: savedCustomDrinks)
         UploadOrderController.shared.uploadOrder(url: urlString, order: order) {
             result

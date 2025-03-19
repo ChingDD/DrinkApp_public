@@ -16,7 +16,7 @@ class DrinkController{
         if let url = URL(string: urlString) {
             // 創建一個 URLRequest 對象，並設定它的 URL 和一個 Authorization 標頭，用於進行 API 請求
             var urlRequest = URLRequest(url: url)
-            urlRequest.setValue("Bearer key1rgSyzPr4pBAmu", forHTTPHeaderField: "Authorization")
+            urlRequest.setValue("Bearer patgELzloM2EgjvRW.fc11fc85870cf11e64862976e4e20a072306c5c12aff075884bed897bc76817c", forHTTPHeaderField: "Authorization")
             
             // 使用 URLSession 創建一個 data task，並進行網路請求
             URLSession.shared.dataTask(with: urlRequest) { data, response, error in

@@ -104,6 +104,8 @@
 		C24069D12A3009DF00D8EBEE /* DrinkApp */ = {
 			isa = PBXGroup;
 			children = (
+				C24069D42A3009DF00D8EBEE /* SceneDelegate.swift */,
+				C24069D22A3009DF00D8EBEE /* AppDelegate.swift */,
 				FC23823A2A354B99008D0ABC /* Model */,
 				FC5FF3D72A525F5D00A7C417 /* View */,
 				FC2382392A354B85008D0ABC /* Controller */,
@@ -118,20 +120,13 @@
 		FC2382392A354B85008D0ABC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C24069D22A3009DF00D8EBEE /* AppDelegate.swift */,
-				C24069D42A3009DF00D8EBEE /* SceneDelegate.swift */,
 				FC3ED9892A36014B0064F555 /* DetailViewController.swift */,
 				C24069D62A3009DF00D8EBEE /* DrinkViewController.swift */,
 				FC307C222A3743D60038F0B9 /* OrderViewController.swift */,
-				FC60C3032A3E09E3007AF272 /* CustomTableViewController.swift */,
-				FC307C282A3748780038F0B9 /* DrinkController.swift */,
-				FC9A3FA22A428F7B00E16075 /* UploadOrderController.swift */,
-				FC5B3D342A4BE68E008B6ED2 /* UpdateController.swift */,
-				FCFE118A2A45B68800C8DC27 /* SavedDrinkController.swift */,
-				FC536EDD2A4D3FD600E55249 /* DeleteController.swift */,
 				FCFE11822A45845E00C8DC27 /* PayTableViewController.swift */,
 				FC5C6B622A4D7EA6004845EA /* LoginViewController.swift */,
 				FC5C6B642A4D80B3004845EA /* RegistViewController.swift */,
+				FC60C3032A3E09E3007AF272 /* CustomTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -147,6 +142,11 @@
 				FC517B012A417DE600B9F569 /* iceLevel.swift */,
 				FC517AFF2A417C9300B9F569 /* sugarLevel.swift */,
 				FC5C6B662A4D80F7004845EA /* User.swift */,
+				FC307C282A3748780038F0B9 /* DrinkController.swift */,
+				FC9A3FA22A428F7B00E16075 /* UploadOrderController.swift */,
+				FC5B3D342A4BE68E008B6ED2 /* UpdateController.swift */,
+				FCFE118A2A45B68800C8DC27 /* SavedDrinkController.swift */,
+				FC536EDD2A4D3FD600E55249 /* DeleteController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

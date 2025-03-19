@@ -9,6 +9,7 @@ import Foundation
 
 class DeleteController{
     static let shared = DeleteController()
+    //把pay頁面的飲品刪除後，要刪除雲端的飲品 (no use)
     func deletData(url:String, removes:[Field]){
         var urlComponent = URLComponents(string: url)
         let queryItem = removes.map { URLQueryItem(name: "records[]", value: $0.id)  }

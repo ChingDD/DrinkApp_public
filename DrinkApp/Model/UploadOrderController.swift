@@ -15,7 +15,7 @@ class UploadOrderController{
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("Bearer key1rgSyzPr4pBAmu", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Bearer patWbHTlA7sTf3N5w.cbcd320a4230cb55b182fd765d5fe2c599b0203a4c7b71eb425aaac7ada87319", forHTTPHeaderField: "Authorization")
         let updateBody = try! JSONEncoder().encode(order)
         print(String(data: updateBody, encoding: .utf8)!)
         urlRequest.httpBody = updateBody

@@ -10,7 +10,7 @@ import UIKit
 
 class SavedDrinkController{
     static let shared = SavedDrinkController()
-    
+    //把儲存在雲端的order飲品抓下來(no use)
     func fetchSavedDrinks(tableView:UITableView?, from urlString:String, completion:@escaping (Result<[Field],Error>) -> Void){
         if let url = URL(string: urlString){
             var urlRequest = URLRequest(url: url)
